@@ -72,7 +72,7 @@ let newEmployee: Employee = {
 }
 
 // UNION TYPES
-// possible to give a variable or function more than one type
+// possible to give a variable or function more than one type using '|'
 function kgToLbs(weight: number | string): number {
   // Narrowing
   if (typeof weight === 'number') {
@@ -85,3 +85,51 @@ function kgToLbs(weight: number | string): number {
 console.log(kgToLbs(23))
 console.log(kgToLbs('23'))
 
+// INTERSECTION TYPES
+// combing types with &, can be both number and string at same time
+type Draggable = {
+  drag: () => void
+}
+
+type Resizable = {
+  resize: () => void
+}
+
+type UIWidget = Draggable & Resizable
+
+let textBox: UIWidget = {
+  drag: () => {},
+  resize: () => {}
+}
+
+// LITERAL TYPES
+// Sometimes we want to limit the variables with exact or specific value
+// i.e. 'let quantity: number' <- can be any number
+type Quantity = 50 | 100
+let quantity: Quantity = 100
+
+// NULLABLE TYPES
+// TS is very strict but if we want to pass null, we can use '|'
+function greet(name: string | null | undefined ) {
+  if (name) {
+    console.log(name.toUpperCase())
+  } else {
+    console.log('Hola!')
+  }
+}
+
+console.log(greet(null))
+// console.log(greet(undefined))
+
+// OPTIONAL CHAINING
+type Customer = {
+  birthday?: Date
+}
+
+function getCustomer(id: number): Customer | null | undefined {
+  return id === 0 ? null : { birthday: new Date() }
+}
+
+let customer = getCustomer(1)
+// Optional property access operator
+console.log(customer?.birthday?.getFullYear())
