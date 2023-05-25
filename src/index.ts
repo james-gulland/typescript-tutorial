@@ -94,7 +94,7 @@ console.log(kgToLbs(23))
 console.log(kgToLbs('23'))
 
 // INTERSECTION TYPES
-// combing types with &, can be both number and string at same time
+// combing types with &, i.e. can be both number and string at same time
 type Draggable = {
   drag: () => void
 }
@@ -130,6 +130,8 @@ console.log(greet(null))
 // console.log(greet(undefined))
 
 // OPTIONAL CHAINING
+// using the '?.' - the dot is a chainging operator
+// will only get executed if it is present (i.e. not null or undefined)
 type Customer = {
   birthday?: Date
 }
@@ -141,4 +143,26 @@ function getCustomer(id: number): Customer | null | undefined {
 let customer = getCustomer(1)
 // Optional property access operator
 console.log(customer?.birthday?.getFullYear())
+
+// NULLISH COAELSCING OPERATOR
+// using '??' to check 
+let speed: number | null = null
+let ride = {
+  // nullish
+  // if speed is not null or undefined, use 'speed' otherwise use 30
+  speed: speed ?? 30
+}
+
+// TYPE ASSERTIONS
+// being explicit about the type so that intellisense can work
+// no type conversion happening here (like C#)
+let phone = document.getElementById('phone') as HTMLInputElement
+// can also be written like this:
+// let phone = <HTMLInputElement> document.getElementById('phone')
+
+// now when do 'phone.' it will show associated properties
+phone.value
+
+// UNKNOWN and NEVER TYPE
+// unknown is preferred to using 'any' type
 
