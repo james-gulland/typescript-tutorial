@@ -29,7 +29,7 @@ let user: [number, string] = [1, 'James']
 // const medium = 2
 // const large = 3
 // written in PascalCase
-const enum Size  { Small = 1, Medium = 2, Large = 3 }
+const enum Size { Small = 1, Medium = 2, Large = 3 }
 let mySize: Size = Size.Medium
 console.log(mySize)
 
@@ -79,6 +79,23 @@ let newEmployee: Employee = {
   }
 }
 
+// Excercise
+type User = {
+  name: string,
+  age: number,
+  occupation?: string
+}
+
+type Bird = {
+  fly: () => void
+}
+
+type Fish = {
+  swim: () => void
+}
+
+type Pet = Bird | Fish
+
 // UNION TYPES
 // possible to give a variable or function more than one type using '|'
 function kgToLbs(weight: number | string): number {
@@ -115,6 +132,9 @@ let textBox: UIWidget = {
 // i.e. 'let quantity: number' <- can be any number
 type Quantity = 50 | 100
 let quantity: Quantity = 100
+
+type DayOfWeek = 'Monday' | 'Tuesday' | 'Wednesday' | 'Thursday' | 'Friday'
+let dayOfWeek: DayOfWeek = 'Monday'
 
 // NULLABLE TYPES
 // TS is very strict but if we want to pass null, we can use '|'
