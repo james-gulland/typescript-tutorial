@@ -1,9 +1,12 @@
+// INTRO TO TYPESCRIPT
+// Is static-checking, like C# or C++
 
-// declaring a number in TypeScript
-// can also be written as 'let sales = 123456789'
+
+// declaring a number in TypeScript (explicit)
 let sales: number = 123456789
 let course: string = 'TypeScript'
 
+// can also be implicitly declared
 let digit = 1234
 console.log(typeof(digit))
 
@@ -133,3 +136,4 @@ function getCustomer(id: number): Customer | null | undefined {
 let customer = getCustomer(1)
 // Optional property access operator
 console.log(customer?.birthday?.getFullYear())
+
