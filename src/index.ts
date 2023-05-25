@@ -1,6 +1,11 @@
 // INTRO TO TYPESCRIPT
 // Is static-checking, like C# or C++
 
+// REFERENCE:
+// use 'tsc' to compile down to JavaScript
+// use 'node dist/[filename.js] to run the compiled file
+// combine into 2: 'tsc && node dist/[filename.js]'
+
 
 // declaring a number in TypeScript (explicit)
 let sales: number = 123456789
