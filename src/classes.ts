@@ -114,5 +114,40 @@ class Student extends Person {
 }
 
 let student = new Student(1, 'James', 'Gulland')
-console.log(student.takeTest())
+// console.log(student.takeTest())
+
+
+// METHOD OVERRIDING
+// if for example we wanted to use the get fullName class method, but append a Professor at the front
+// We need to do this with method overriding
+
+class Teacher extends Person {
+  // using override to override the method defined in Person
+  override get fullName() {
+
+    // using the super to inherit the name from the class (instead of writing out this.firstName, this.lastName...)
+    return 'Professor' + super.fullName
+  }
+
+}
+
+let teacher = new Teacher('John', 'Smith')
+
+
+
+// POLYMORPHISM
+// Many Forms - where an object can take many forms
+
+// function to print names of People, looping through an array and logging their full name
+function printNames(people: Person[]) {
+  for (let person of people) {
+    console.log(person.fullName)
+  }
+}
+
+// calling the function.  
+printNames([
+  new Student(1, 'John', 'Smith'),
+  new Teacher('Sam', 'Harris')
+])
 

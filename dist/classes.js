@@ -60,5 +60,19 @@ class Student extends Person {
     }
 }
 let student = new Student(1, 'James', 'Gulland');
-console.log(student.takeTest());
+class Teacher extends Person {
+    get fullName() {
+        return 'Professor' + super.fullName;
+    }
+}
+let teacher = new Teacher('John', 'Smith');
+function printNames(people) {
+    for (let person of people) {
+        console.log(person.fullName);
+    }
+}
+printNames([
+    new Student(1, 'John', 'Smith'),
+    new Teacher('Sam', 'Harris')
+]);
 //# sourceMappingURL=classes.js.map
