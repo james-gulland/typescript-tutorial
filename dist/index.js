@@ -38,6 +38,7 @@ let textBox = {
     resize: () => { }
 };
 let quantity = 100;
+let dayOfWeek = 'Monday';
 function greet(name) {
     if (name) {
         console.log(name.toUpperCase());
@@ -52,4 +53,10 @@ function getCustomer(id) {
 }
 let customer = getCustomer(1);
 console.log((_a = customer === null || customer === void 0 ? void 0 : customer.birthday) === null || _a === void 0 ? void 0 : _a.getFullYear());
+let speed = null;
+let ride = {
+    speed: speed !== null && speed !== void 0 ? speed : 30
+};
+let phone = document.getElementById('phone');
+phone.value;
 //# sourceMappingURL=index.js.map
