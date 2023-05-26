@@ -1,5 +1,7 @@
 
 // CLASSES IN TYPESCRIPT
+// classes are blueprints for creating objects
+
 class Account {
   // Account properties (public by default)
   readonly id: number
@@ -151,3 +153,50 @@ printNames([
   new Teacher('Sam', 'Harris')
 ])
 
+
+
+// INTERFACE
+// no such thing as an interface in JavaScript, purely a TS thing
+// A bit like an abstract class but reusable
+// I.e. having a calendar class, which uses iCal, Google, Outlook - similar methods but different execution
+// only define methods
+interface Calendar {
+  name: string
+  addEvent(): void
+  removeEvent(): void
+}
+
+// You can then extend interface like this:
+interface CloudCalendar extends Calendar {
+  // example method that syncs calendars to cloud
+  sync(): void
+}
+
+class GoogleCalendar implements Calendar {
+  constructor(public name: string) {}
+  addEvent(): void {
+    throw new Error("Method not implemented.")
+  }
+  removeEvent(): void {
+    throw new Error("Method not implemented.")
+  }
+
+}
+
+// EXERCISE:
+
+class Logger {
+  constructor(public name: string) {}
+
+  writeMessage() {
+    console.log(this.name)
+  }
+}
+
+class Human {
+  constructor(public firstName: string, public lastName: string) {}
+
+  get fullname(): string {
+    return `${this.firstName} ${this.lastName}`
+  }
+}
