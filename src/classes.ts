@@ -85,3 +85,34 @@ ride2.start()
 console.log(Ride.activeRides)
 // now we can't do the below as it is readonly
 // Ride.activeRides = 20
+
+
+// INHERITANCE
+// we dont want to repeat code if duplicated in more than one place
+// i.e. create a Teacher and Student class that both have talk(), walk() etc methods.
+class Person {
+  // definging the properties directly within the constructor is possible like this:
+  constructor(public firstName: string, public lastName: string) {}
+
+    get fullName() {
+      return this.firstName + ' ' + this.lastName
+    }
+
+    walk() {
+      console.log('Walking')
+    }
+}
+
+class Student extends Person {
+  constructor(public studentId: number, firstName: string, lastName: string) {
+    super(firstName, lastName)
+  }
+
+  takeTest(){
+    return console.log('Taking test')
+  }
+}
+
+let student = new Student(1, 'James', 'Gulland')
+console.log(student.takeTest())
+
