@@ -75,4 +75,38 @@ printNames([
     new Student(1, 'John', 'Smith'),
     new Teacher('Sam', 'Harris')
 ]);
+class GoogleCalendar {
+    constructor(name) {
+        this.name = name;
+    }
+    addEvent() {
+        throw new Error("Method not implemented.");
+    }
+    removeEvent() {
+        throw new Error("Method not implemented.");
+    }
+}
+class Logger {
+    constructor(name) {
+        this.name = name;
+    }
+    writeMessage() {
+        console.log(this.name);
+    }
+}
+class PersonExercise {
+    constructor(firstName, lastName) {
+        this.firstName = firstName;
+        this.lastName = lastName;
+    }
+    get fullname() {
+        return `${this.firstName} ${this.lastName}`;
+    }
+}
+class EmployeeExercise extends PersonExercise {
+    constructor(firstName, lastName, salary) {
+        super(firstName, lastName);
+        this.salary = salary;
+    }
+}
 //# sourceMappingURL=classes.js.map

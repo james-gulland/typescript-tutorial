@@ -193,10 +193,28 @@ class Logger {
   }
 }
 
-class Human {
+class PersonExercise {
   constructor(public firstName: string, public lastName: string) {}
 
   get fullname(): string {
     return `${this.firstName} ${this.lastName}`
   }
+}
+
+class EmployeeExercise extends PersonExercise {
+  constructor(firstName: string, lastName: string, public salary: number) {
+    super(firstName, lastName)
+  }
+}
+
+interface EmployeeInterface {
+  name: string
+  salary: number
+  address: Address
+}
+
+interface Address {
+  street: string
+  city: string
+  zipCode: number
 }
