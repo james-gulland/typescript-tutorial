@@ -29,15 +29,15 @@ interface Result<T> {
   error: string | null
 }
 
-function fetch<T>(url: string): Result<T>{
-  return { data: null, error: null}
-}
+// function fetch<T>(url: string): Result<T>{
+//   return { data: null, error: null}
+// }
 
 interface Product {
   title: string
 }
 
-let result = fetch<Product>('url')
+// let result = fetch<Product>('url')
 
 // GENERIC CLASSES
 
